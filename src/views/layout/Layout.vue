@@ -10,7 +10,7 @@
 
 <script>
 import Navbar from '@/views/layout/components/Navbar'
-import Sidebar from '@/views/layout/components/Sidebar'
+import Sidebar from '@/views/layout/components/Sidebar/Sidebar'
 import AppMain from '@/views/layout/components/AppMain'
 export default {
   name: 'layout',
