@@ -1,11 +1,12 @@
 <template>
   <div>
-    sidebar
+    SidebarItem
   </div>
 </template>
 
 <script>
   export default {
+    name: 'SidebarItem',
     data() {
       return {
   

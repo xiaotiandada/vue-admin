@@ -1,7 +1,7 @@
 <template>
     <div class="app-wrapper">
-      <sidebar></sidebar>
-        <div>
+      <sidebar class="sidebar-container"></sidebar>
+        <div class="main-container">
           <navbar></navbar>
           <app-main></app-main>
         </div>
@@ -10,7 +10,7 @@
 
 <script>
 import Navbar from '@/views/layout/components/Navbar'
-import Sidebar from '@/views/layout/components/Sidebar/Sidebar'
+import Sidebar from '@/views/layout/components/Sidebar/index'
 import AppMain from '@/views/layout/components/AppMain'
 export default {
   name: 'layout',

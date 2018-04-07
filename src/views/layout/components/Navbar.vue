@@ -11,12 +11,12 @@
           <i class="el-icon-caret-bottom"></i>
         </div>
         <el-dropdown-menu slot="dropdown">
-          <router-link class="inlineBlock" to="/">
+          <router-link to="/">
             <el-dropdown-item>
               Home
             </el-dropdown-item>
           </router-link>
-          <el-dropdown-item>
+          <el-dropdown-item divided>
               <span style="display: block;">LogOut</span>
             </el-dropdown-item>
         </el-dropdown-menu>
