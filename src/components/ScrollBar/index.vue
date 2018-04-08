@@ -2,7 +2,7 @@
                             <!-- wheel onwheel 阻止鼠标滚动 -->
   <div class="scroll-container" @wheel.prevent="handleScroll">
     <div class="scroll-wrapper">
-        <slot></slot>
+        <slot>empty</slot>
     </div>
   </div>
 </template>
