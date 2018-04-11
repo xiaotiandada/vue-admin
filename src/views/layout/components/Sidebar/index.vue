@@ -1,7 +1,8 @@
 <template>
   <scroll-bar>
-    <el-menu mode="vertical" unique-opened background-color="#304156" text-color="#fff" active-text-color="#409EFF">
-      <sidebar-item></sidebar-item>
+    <el-menu mode="vertical" unique-opened :default-active="$route.path" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
+      <sidebar-item :routes="routes"></sidebar-item>
+      <!-- <button @click="con">1</button> -->
     </el-menu>
   </scroll-bar>
 </template>
@@ -17,6 +18,16 @@ export default {
   data() {
     return {
 
+    }
+  },
+  computed: {
+    routes() {
+      return this.$router.options.routes
+    }
+  },
+  methods: {
+    con() {
+      console.log(this.$router.options.routes)
     }
   }
 }

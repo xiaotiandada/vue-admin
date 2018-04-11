@@ -10,6 +10,8 @@ import locale from 'element-ui/lib/locale/lang/en'
 
 import '@/styles/index.less' // global css
 
+import '@/icons' // icons
+
 Vue.config.productionTip = false
 Vue.use(ElementUI, {
   locale

@@ -1,7 +1,9 @@
 <template>
-  <div>
-    appmain
-  </div>
+  <section class="app-amin">
+    <transition>
+      <router-view></router-view>
+    </transition>
+  </section>
 </template>
 
 <script>
