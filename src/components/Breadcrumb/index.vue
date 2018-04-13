@@ -1,31 +1,69 @@
 <template>
   <el-breadcrumb class="app-breadcrumb" separator="/">
-    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-    <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-    <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-    <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+    <transition-group name="breadcrumb">
+      <el-breadcrumb-item 
+      v-for="(item,index)  in levelList" 
+      :key="item.path" 
+      v-if="item.meta.title">
+        <span
+        v-if="item.redirect==='noredirect'||index==levelList.length-1" 
+        class="no-redirect">
+        {{item.meta.title}}
+        </span>
+        <router-link v-else 
+        :to="item.redirect||item.path">
+        {{item.meta.title}}
+        </router-link>
+      </el-breadcrumb-item>
+    </transition-group>
   </el-breadcrumb>
 </template>
 
 <script>
   export default {
+    created() {
+      this.getBreadcrumb()
+    },
     data() {
       return {
-  
+        levelList: null
+      }
+    },
+    watch: {
+      $route() {
+        this.getBreadcrumb()
+      }
+    },
+    methods: {
+      getBreadcrumb() {
+        let matched = this.$route.matched.filter(item => item.name)
+        // console.log(matched)
+        const first = matched[0]
+        if (first && first.name !== 'dashboard') {
+          matched = [
+            {
+              path: '/dashboard',
+              meta: {
+                title: 'Dashboard'
+              }
+            }
+          ].concat(matched)
+        }
+        this.levelList = matched
       }
     }
   }
 </script>
 
 <style rel="stylesheet/less" lang="less" scoped>
-.app-breadcrumb.el-breadcrumb {
+  .app-breadcrumb.el-breadcrumb {
     display: inline-block;
     font-size: 14px;
     line-height: 50px;
     margin-left: 10px;
     .no-redirect {
-        color: #97a8be;
-        cursor: text;
+      color: #97a8be;
+      cursor: text;
     }
-}
+  }
 </style>

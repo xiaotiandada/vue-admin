@@ -10,6 +10,8 @@ import locale from 'element-ui/lib/locale/lang/en'
 
 import '@/styles/index.less' // global css
 
+import store from './store'
+
 import '@/icons' // icons
 
 Vue.config.productionTip = false
@@ -21,6 +23,7 @@ Vue.use(ElementUI, {
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
