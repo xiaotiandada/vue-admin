@@ -13,6 +13,7 @@ import '@/styles/index.less' // global css
 import store from './store'
 
 import '@/icons' // icons
+import '@/permission' // permission control
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {

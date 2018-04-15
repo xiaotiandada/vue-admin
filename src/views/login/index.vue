@@ -100,9 +100,11 @@ export default {
           //     this.$router.push({ path: '/' })
           //   }, 1000)
           this.$store.dispatch('Login', this.loginForm).then(() => {
+            this.loading = false
             this.$router.push({ path: '/' }) // 登录成功之后重定向到首页
           }).catch(err => {
             this.$message.error(err) // 登录失败提示错误
+            this.loadin = false
           })
         } else {
           console.log('error submit!!')
